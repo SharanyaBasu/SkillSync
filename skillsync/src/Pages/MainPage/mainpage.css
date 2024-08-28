@@ -1,0 +1,233 @@
+/* Apply background image to the body */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('../skillsyncbg.jpeg'); /* Replace with your image URL */
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 800px; /* Set a fixed width */
+  height: 600px; /* Set a fixed height */
+  margin: 40px auto 20px auto; 
+  background: linear-gradient(135deg, rgba(243, 244, 246, 0.5), rgba(229, 231, 235, 0.5)); /* Subtle gradient background with opacity */
+  border-radius: 10px; 
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds container height */
+  position: relative; /* For positioning the pseudo-element */
+}
+
+/* Optional: Add a pseudo-element for overlay with opacity */
+.main-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5); /* White overlay with opacity */
+  border-radius: 10px; /* Match border-radius of container */
+  z-index: -1; /* Place behind content */
+}
+
+/* Adjust other styles as needed */
+.field-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap; /* Allow wrapping for skill and experience bubbles */
+}
+
+.bubble-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* Space between bubbles */
+  margin-bottom: 10px;
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  background-color: #48698f;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 20px; /* Rounded bubbles */
+  font-size: 14px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  position: relative; /* For positioning the cross button */
+}
+
+.bubble input {
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 14px;
+  width: 100px; /* Adjust width as needed */
+  outline: none;
+  align-items: center;
+  text-align: center;
+}
+
+.add-button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #5fb2d3;
+  color: #fff;
+  border: none;
+  border-radius: 20px; /* Rounded button */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: background-color 0.3s;
+}
+
+.add-button:hover {
+  background-color: #377188; /* Darker green on hover */
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #5fb2d3;
+  color: #fff;
+  border: none;
+  border-radius: 20px; /* Rounded button */
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #377188; /* Darker blue on hover */
+}
+
+.job-result {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.job-result h3 {
+  margin-top: 0;
+}
+
+.job-result a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.job-result a:hover {
+  text-decoration: underline;
+}
+
+/* Experience section styles */
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between experience boxes */
+  margin-bottom: 20px;
+}
+
+.experience-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  position: relative; /* For positioning the cross button */
+}
+
+.experience-box textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 60px; /* Minimum height for the textarea */
+}
+
+.experience-box .add-button {
+  background-color: #5fb2d3;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.experience-box .add-button:hover {
+  background-color: #377188;
+}
+
+/* Remove button for skill bubbles */
+.bubble .remove-button {
+  position: absolute;
+  left: 10px; /* Position from the right */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  background: transparent;
+  border: none;
+  color: #fff; /* White cross */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.bubble .remove-button:hover {
+  color: darkred;
+}
+
+/* Remove button for experience boxes */
+.experience-box .remove-button {
+  position: absolute;
+  right: 10px; /* Position from the right */
+  top: 10px; /* Adjust to align with padding */
+  background: transparent;
+  border: none;
+  color: #000; /* Black cross */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.experience-box .remove-button:hover {
+  color: darkred;
+}
+
+/* Styling for the input field */
+.input-field {
+  padding: 10px; /* Add padding inside the input field */
+  font-size: 16px; /* Increase font size for better readability */
+  border: 2px solid #5fb2d3; /* Blue border to match the theme */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text color for contrast */
+  width: 100%; /* Full width of the container */
+  max-width: 400px; /* Maximum width to avoid stretching */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions for focus effects */
+}
+
+.input-field:focus {
+  border-color: #377188; /* Darker blue border on focus */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Increased shadow on focus */
+}
+
+.input-field::placeholder {
+  color: #aaa; /* Light grey placeholder text */
+}
+

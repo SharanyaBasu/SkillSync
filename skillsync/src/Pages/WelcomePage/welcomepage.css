@@ -1,0 +1,53 @@
+/* Background gradient and text color */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #00b4db, #0083b0); /* Gradient background */
+}
+
+/* Centered container with padding and shadow */
+.welcome-container {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Title styling with a font size and text shadow */
+.welcome-container h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for emphasis */
+}
+
+/* Button styling with hover effects */
+.get-started-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #48698f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px; /* Pill-shaped button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Button shadow */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.get-started-button:hover {
+  background-color: #335478; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.get-started-button:active {
+  background-color: #004494; /* Even darker blue on click */
+  transform: scale(1); /* Return to original size */
+}
